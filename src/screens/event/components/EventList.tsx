@@ -19,24 +19,21 @@ const EventListView = (props: EventListViewProps) => {
     (item: ProductItem) => item.id.toString(),
     [],
   );
+
+  const EmptyList = () => (
+    <Text style={{ color: 'gray', fontSize: 25 }}>No Data Found</Text>
+  );
   return (
     <View>
       <FlatList
         data={props?.eventData || []}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        ListEmptyComponent={() => {
-          return (
-            <Text
-              style={{
-                color: 'gray',
-                fontSize: 25,
-              }}
-            >
-              No Data Found
-            </Text>
-          );
-        }}
+        initialNumToRender={5}
+        maxToRenderPerBatch={10}
+        windowSize={5}
+        contentContainerStyle={{ paddingBottom: 70 }}
+        ListEmptyComponent={EmptyList}
       />
     </View>
   );

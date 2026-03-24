@@ -5,14 +5,8 @@
  * @format
  */
 
-import {
-  LogBox,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import { LogBox, StatusBar, useColorScheme } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import RootNavigator from './src/navigation/RootNavigator';
 import { Provider } from 'react-redux';
 import { persistor, store } from './src/redux/store';
