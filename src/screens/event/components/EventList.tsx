@@ -2,7 +2,6 @@ import { FlatList, Text, View } from 'react-native';
 import React, { useCallback } from 'react';
 import EventRenderItem from './EventRenderItem';
 import { ProductItem } from '../../../api/types/event.type';
-import { useAppSelector } from '../../../redux/hooks';
 
 interface EventListViewProps {
   eventData: ProductItem[];
